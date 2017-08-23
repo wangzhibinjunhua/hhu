@@ -509,8 +509,8 @@ public class SettingActivity extends BaseActivity implements OnScrollListener, O
 		selectedItem.clear();
 		for (int i = 0; i < settingAdapter.getCount(); i++) {
 			if (settingAdapter.getDataItem(i).getItemSelect()
-					&& !TextUtils.isEmpty(settingAdapter.getDataItem(i).getItemValue())) {
-				if (i != 0) {
+					/*&& !TextUtils.isEmpty(settingAdapter.getDataItem(i).getItemValue())*/) {
+				if (i != 0 && i!=1) {
 					selectedItem.add(i);
 				}
 			}
