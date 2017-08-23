@@ -261,21 +261,21 @@ public class SettingTimeActivity extends BaseActivity implements OnClickListener
 		LogUtil.logMessage("wzb", "####: info:"+info);
 		String ainfo=Common.asciiToString(info);
 		LogUtil.logMessage("wzb", "***: ainfo:"+ainfo);
-		if(id==0)meterTime.setText(ainfo);
-		if(id==1)meterDate.setText(ainfo);
+		if(id==1)meterTime.setText(ainfo);
+		if(id==0)meterDate.setText(ainfo);
 	}
 	
 	private void updateWriteUI(String s, int id) {
 		LogUtil.logMessage("wzb", "####: info:"+s);
 		String ainfo=Common.asciiToString(s);
 		LogUtil.logMessage("wzb", "***: ainfo:"+ainfo);
-		if(id==0){
+		if(id==1){
 			if(s.equals("06")){
 				ToastUtil.showShortToast(mContext, "time:write ok");
 			}else if(s.equals("15")){
 				ToastUtil.showShortToast(mContext, "time:write failed");
 			}
-		}else if(id==1){
+		}else if(id==0){
 			if(s.equals("06")){
 				ToastUtil.showShortToast(mContext, "date:write ok");
 			}else if(s.equals("15")){

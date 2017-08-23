@@ -33,6 +33,7 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
@@ -83,6 +84,17 @@ public class SettingActivity extends BaseActivity implements OnScrollListener, O
 		// meterPw = getIntent().getStringExtra("meter_pw");
 		initTitleView();
 		initView();
+		
+		test();
+	}
+	
+	void test(){
+		String cmd="96.52.11";
+		String writeValue="0005";
+		String sendData = "01573102" + Common.stringToAscii(cmd) + "28" + Common.stringToAscii(writeValue) + "2903";
+		String sendDataXor = Common.xorHex(sendData.substring(2));
+		Log.e("wzb","test:"+sendData+sendDataXor);
+		
 	}
 
 	private void initView() {
@@ -467,7 +479,7 @@ public class SettingActivity extends BaseActivity implements OnScrollListener, O
 
 	private void sendWriteDataItemCmd() {
 		int curComItem = selectedItem.get(curItemId);
-		String cmd = ResTools.getResStringArray(mContext, R.array.setting)[curComItem];
+		String cmd = ResTools.getResStringArray(mContext, R.array.setting_cmd)[curComItem];
 		String writeValue = "";
 		writeValue = settingAdapter.getDataItem(curComItem).getItemValue();
 		String sendData = "01573102" + Common.stringToAscii(cmd) + "28" + Common.stringToAscii(writeValue) + "2903";

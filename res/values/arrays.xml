@@ -1177,8 +1177,8 @@
         <item>@string/user_level</item>
     </string-array>
     <string-array name="time_cmd" translatable="false">
-        <item>0.9.1</item>
         <item>0.9.2</item>
+        <item>0.9.1</item>
     </string-array>
 
 </resources>
